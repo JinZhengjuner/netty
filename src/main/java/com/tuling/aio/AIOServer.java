@@ -40,7 +40,6 @@ public class AIOServer {
                     e.printStackTrace();
                 }
             }
-
             @Override
             public void failed(Throwable exc, Object attachment) {
                 exc.printStackTrace();

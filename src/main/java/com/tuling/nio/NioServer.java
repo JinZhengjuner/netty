@@ -15,14 +15,12 @@ public class NioServer {
     static List<SocketChannel> channelList = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-
         // 创建NIO ServerSocketChannel,与BIO的serverSocket类似
         ServerSocketChannel serverSocket = ServerSocketChannel.open();
         serverSocket.socket().bind(new InetSocketAddress(9000));
         // 设置ServerSocketChannel为非阻塞
         serverSocket.configureBlocking(false);
         System.out.println("服务启动成功");
-
         while (true) {
             // 非阻塞模式accept方法不会阻塞，否则会阻塞
             // NIO的非阻塞是由操作系统内部实现的，底层调用了linux内核的accept函数
